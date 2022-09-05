@@ -1,0 +1,18 @@
+h1 {
+  text-align: center;
+}
+
+section {
+  display: flex;
+  border: 2px solid greenyellow;
+}
+
+.col1 {
+  border: 2px solid black;
+  width: 50%;
+}
+
+.col2 {
+  border: 2px solid red;
+  width: 50%;
+}
