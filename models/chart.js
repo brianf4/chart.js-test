@@ -4,8 +4,8 @@ const moviePointsSchema = new mongoose.Schema({
   spiderman: {
     type: Number,
     required: true,
-  },
-  dragonball: {
+  }
+  /*dragonball: {
     type: Number,
     required: true,
   },
@@ -20,7 +20,7 @@ const moviePointsSchema = new mongoose.Schema({
   thor: {
     type: Number,
     required: true,
-  },
+  },*/
 })
 
 module.exports = mongoose.model('MoviePoints', moviePointsSchema, 'points')
