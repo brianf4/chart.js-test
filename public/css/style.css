@@ -1,18 +1,15 @@
-h1 {
-  text-align: center;
+body {
+  padding-top: 1em;
 }
 
-section {
+body > section {
   display: flex;
-  border: 2px solid greenyellow;
+  justify-content: space-between;
+  padding: 0 2em;
 }
 
-.col1 {
-  border: 2px solid black;
-  width: 50%;
+#heading {
+  text-align: center;
+  color: red;
 }
 
-.col2 {
-  border: 2px solid red;
-  width: 50%;
-}

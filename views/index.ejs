@@ -4,31 +4,37 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/public/css/style.css">
+  <link rel="stylesheet" href="css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
   <title>Document</title>
 </head>
 <body>
-  
+  <h1 id="heading">Movie Poll</h1>
   <section>
     
     <div class="col1">
-      <h1 id="heading">Movie Poll</h1>
+      
       <form action="/" method="POST">
-        <label for="name">Points for Spiderman:</label>
-        <input type="text" name="spiderman" required> 
-
-        <label for="name">Points for Dragonball:</label>
-        <input type="text" name="dragonball" required> 
-
-        <label for="name">Points for Minions:</label>
-        <input type="text" name="minions" required> 
-
-        <label for="name">Points for Jaws:</label>
-        <input type="text" name="jaws" required> 
-
-        <label for="name">Points for Thor:</label>
-        <input type="text" name="thor" required> 
+        <div>
+          <label for="name">Points for Spiderman:</label>
+          <input type="text" name="spiderman" required> 
+        </div>
+        <div>
+          <label for="name">Points for Dragonball:</label>
+          <input type="text" name="dragonball" required> 
+        </div>
+        <div>
+          <label for="name">Points for Minions:</label>
+          <input type="text" name="minions" required> 
+        </div>
+        <div>
+          <label for="name">Points for Jaws:</label>
+          <input type="text" name="jaws" required> 
+        </div>
+        <div>
+          <label for="name">Points for Thor:</label>
+          <input type="text" name="thor" required> 
+        </div>
         <button type="submit">Submit</button>
       </form>
     </div>
@@ -40,8 +46,35 @@
 
   
   
-  
+  <script>
+    let myChart = document.getElementById('myChart').getContext('2d');
 
-<script type="text/javascript" src="./js/script.js"></script>
+    //Global Options
+    // Chart.defaults.global.defaultFontFamily = 'Lato';
+    // Chart.defaults.global.defaultFontSize = 18;
+    // Chart.defaults.global.defaultFontColot = '#777'
+    let massPopChart = new Chart(myChart, {
+      type: 'bar', 
+      data: {
+        labels: ['Spiderman', 'Dragonball', 'Minions', 'Jaws', 'Thor'],
+        datasets: [{
+          label: 'Movie Points',
+          data: [1, 2, 3, 4, 5],
+          backgroundColor:[
+          'rgba(225, 99, 132, 0.6)',
+          'rgba(54, 162, 235, 0.6)',
+          'rgba(255, 206, 86, 0.6)',
+          'rgba(75, 192, 192, 0.6)',
+          'rgba(153, 102, 255, 0.6)',
+          'rgba(255, 159, 64, 0.6)',
+          'rgba(255, 99, 132, 0.6)'
+      ],
+        }]
+      },
+      options: {
+
+      }
+    })
+  </script>
 </body>
 </html>

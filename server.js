@@ -31,10 +31,10 @@ app.post('/', async (req, res) => {
     const moviePoint = new MoviePoints(
         {
             spiderman: req.body.spiderman,
-            dragonballPoints: req.body.dragonball,
-            minionsPoints: req.body.minions,
-            jawsPoints: req.body.jaws,
-            thorPoints: req.body.thor,
+            dragonball: req.body.dragonball,
+            minions: req.body.minions,
+            jaws: req.body.jaws,
+            thor: req.body.thor,
         }
     )
     try {
