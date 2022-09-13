@@ -3,7 +3,7 @@ const app = express()
 const PORT = 4000;
 const mongoose = require('mongoose')
 const MoviePoints = require('./models/chart')
-require('dotenv').config()
+require('dotenv').config({path: './config/.env'})
 
 //Setting Middleware
 app.set('view engine', 'ejs')
@@ -11,10 +11,10 @@ app.use(express.static('public'))
 app.use(express.urlencoded({extended: true}))
 
 
-mongoose.connect(process.env.DB_CONNECT, 
-    {userNewUrlParser: true},
-    () => {console.log('connected to db...')}
-
+mongoose.connect(
+    process.env.DB_CONNECT, 
+    { useNewUrlParser: true }, 
+    () => {console.log("Connected to db!");}
 )
 
 app.get('/', (req, res) => {
