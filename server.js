@@ -17,9 +17,14 @@ mongoose.connect(
     () => {console.log("Connected to db!");}
 )
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
     try {
-        res.render('index.ejs');
+        MoviePoints.find({}, (err, points) => {
+            res.render("index.ejs", {
+                moviePoints: points,
+            })
+        })
+        
     } catch (err) {
         console.error(err);
         res.sendStatus(500);
@@ -39,7 +44,6 @@ app.post('/', async (req, res) => {
     )
     try {
         await moviePoint.save()
-        console.log(moviePoint)
         res.redirect('/')
         
     } catch (err) {

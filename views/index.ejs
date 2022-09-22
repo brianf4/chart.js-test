@@ -10,6 +10,10 @@
 </head>
 <body>
   <h1 id="heading">Movie Poll</h1>
+
+
+
+  
   <section>
     
     <div class="col1">
@@ -43,10 +47,43 @@
       <canvas id="myChart" class="col2" width="400" height="400"></canvas>
     </div>
   </section>
+    <%# did not use any 'lessthan percent equal' sign because im just grabbing value and not %>
+    <%# directly rendering it to the DOM %>
+    <% let theArr, sum1, sum2, sum3, sum4, sum5 %>
+    <% sum1 = moviePoints.reduce((sum, obj) => { %>
+  <% return sum + obj.spiderman %>
+  <%},0) %> 
+  
+    <% sum2 = moviePoints.reduce((sum, obj) => { %>
+  <% return sum + obj.dragonball %>
+  <%},0) %> 
+  
+    <% sum3 = moviePoints.reduce((sum, obj) => { %>
+  <% return sum + obj.minions %>
+  <%},0) %> 
+  
+    <% sum4 = moviePoints.reduce((sum, obj) => { %>
+  <% return sum + obj.jaws %>
+  <%},0) %> 
+  
+    <% sum5 = moviePoints.reduce((sum, obj) => { %>
+  <% return sum + obj.thor %>
+  <%},0) %> 
+  
+  <% console.log(sum1, sum2, sum3, sum4, sum5) %>
 
+
+
+
+
+
+   <%# moviePoints.forEach(content => { %>              
+   <%#  %>
+
+   <%# }) %>
+   <%#  sum1 = content.reduce((sum, obj) => { return sum + obj.spiderman }, 0)%>
   
-  
-  <script>
+  <script type="text/javascript">
     let myChart = document.getElementById('myChart').getContext('2d');
 
     //Global Options
@@ -59,7 +96,7 @@
         labels: ['Spiderman', 'Dragonball', 'Minions', 'Jaws', 'Thor'],
         datasets: [{
           label: 'Movie Points',
-          data: [1, 2, 3, 4, 5],
+          data: [<%=sum1%>, <%=sum2%>, <%=sum3%>, <%=sum4%>, <%=sum5%>], 
           backgroundColor:[
           'rgba(225, 99, 132, 0.6)',
           'rgba(54, 162, 235, 0.6)',
@@ -67,13 +104,16 @@
           'rgba(75, 192, 192, 0.6)',
           'rgba(153, 102, 255, 0.6)',
           'rgba(255, 159, 64, 0.6)',
-          'rgba(255, 99, 132, 0.6)'
-      ],
+          ],
         }]
       },
       options: {
-
-      }
+        plugins: {
+            legend: {
+                display: false,
+            }
+        }
+    }
     })
   </script>
 </body>
